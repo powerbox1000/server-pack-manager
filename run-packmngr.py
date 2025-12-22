@@ -58,6 +58,8 @@ class PackManagerHandler(SimpleHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
             self.wfile.write(b"404 Not Found")
+    def log_message(self, format, *args):
+        pass
 
 httpd = HTTPServer(("", TCP_PORT), PackManagerHandler)
 print(f"Serving resource pack at http://0.0.0.0:{TCP_PORT}...")
